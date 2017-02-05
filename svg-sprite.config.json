@@ -1,0 +1,24 @@
+{
+  "mode": {
+    "symbol": {
+      "dest": ".",
+      "sprite": "sprite.min.svg",
+      "prefix": ".%s",
+      "dimensions": "  ",
+      "inline": true,
+      "example": {
+        "dest": "index.html",
+        "template": "index.template.html"
+      }
+    }
+  },
+  "svg": {
+    "xmlDeclaration": false,
+    "doctypeDeclaration": false
+  },
+  "shape": {
+    "id": {
+      "generator": "ion-%s"
+    }
+  }
+}

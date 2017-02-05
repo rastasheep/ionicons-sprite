@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Ionicons icon font packaged as SVG sprite." />
+
+  <title>Ionicons sprite: Ionicons icon font packaged as SVG sprite.</title>
+
+  <style type="text/css">
+    /* Demo page css */
+    h1,h2{color:#999;font-weight:400}
+    body,h1,h2{font-weight:400}
+    body{box-sizing:border-box;padding-top:120px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;letter-spacing:0;font-style:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-moz-font-feature-settings:liga on;color:#373737;font-size:18px;line-height:1.4}
+    header{text-align:center}
+    .content,header{margin:auto;max-width:66rem;padding-top:1.5em}
+    h1{font-size:16px}
+    h2{font-size:14px}
+    p{margin:25px 0}
+    a{color:#4F8EF7;text-decoration:none;opacity:.7;transition-timing-function:ease-in-out;transition-duration:.1s;transition-property:color;transition-property:opacity}
+    a:active,a:focus,a:hover{text-decoration:underline;opacity:1}
+    .download{max-width:200px;width:100%;margin:60px auto 10px}
+    .download a{display:block;padding:12px 0;border:2px solid #4F8EF7;border-radius:2px;background-color:#fff;text-decoration:none;font-weight:700;font-size:22px}
+    .download a:hover{background:#4F8EF7;color:#fff}
+    .version{margin:2px auto;color:#ccc;font-size:12px}
+    .icon-box{float:left;width:22rem;font-size:32px;padding-bottom:.25em}
+    .icon-name{font-size:.5em;margin-left:1em}
+    .clearfix:after,.clearfix:before{content:" ";display:table}
+    .clearfix:after{clear:both}
+  </style>
+
+  <style type="text/css">
+    /* Example icon styling */
+    .ion {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      stroke-width: 0;
+      stroke: currentColor;
+      fill: currentColor;
+    }
+
+    /* ==========================================
+    Single-colored icons can be modified like so:
+    .ion-name {
+      font-size: 32px;
+      color: red;
+    }
+    ========================================== */
+  </style>
+</head>
+<body>
+  <!--
+  Inline <symbol> SVG sprite
+  ====================================================================================================
+  This is an inlined version of the generated SVG sprite. The single images may be <use>d everywhere
+  below within this document.
+  -->
+
+  <svg width="0" height="0" style="position:absolute">
+  {{#shapes}}		{{{svg}}}
+  {{/shapes}}
+  </svg>
+
+  <header>
+    <h1><strong>Ionicons sprite</strong></h1>
+    <h1>Ionicons icon font packaged as SVG sprite.</h1>
+    <h2>100% free and open source. MIT Licensed.</h2>
+    <p>
+      <span class="github-star">
+        <iframe src="http://ghbtns.com/github-btn.html?user=rastasheep&amp;repo=ionicons-sprite&amp;type=watch&amp;count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" style="margin-left: 0px; margin-right: -30px"></iframe>
+      </span>
+    </p>
+    <p class="download">
+      <a href="https://github.com/rastasheep/ionicons-sprite">Download</a>
+    </p>
+    <p class="version">
+      Ionicons Version 2.0.1 - <a href="https://github.com/driftyco/ionicons">GitHub</a>
+    </p>
+  </header>
+
+  <div class="clearfix content">
+
+{{#shapes}}    <div class="icon-box">
+      <svg class="ion {{#selector.dimensions}}{{#last}}{{#classname}}{{raw}}{{/classname}}{{/last}}{{/selector.dimensions}}">
+        <use xlink:href="#{{name}}"></use>
+      </svg>
+      <span class="icon-name">{{name}}</span>
+  </div>
+{{/shapes}}
+
+  </div>
+
+</body>
+</html>
