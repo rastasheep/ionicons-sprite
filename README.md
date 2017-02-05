@@ -1,6 +1,7 @@
-# ionicons-sprite
+# Ionicons sprite
+### SVG sprite icon set based on [Ionicons icons](http://ionicons.com).
 
-SVG sprite icon set based on [Ionicons icons](http://ionicons.com).
+[See demo](https://rastasheep.github.io/ionicons-sprite).
 
 ## License
 
