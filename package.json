@@ -1,0 +1,9 @@
+{
+  "name": "ionicons-sprite",
+  "version": "0.0.1",
+  "description": "SVG sprite icon set based on Ionicons icons",
+  "main": "index.js",
+  "repository": "https://github.com/rastasheep/ionicons-sprite",
+  "author": "Aleksandar Diklic <rastasheep3@gmail.com>",
+  "license": "MIT"
+}
