@@ -12,22 +12,29 @@
     /* Demo page css */
     h1,h2{color:#999;font-weight:400}
     body,h1,h2{font-weight:400}
-    body{box-sizing:border-box;padding-top:120px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;letter-spacing:0;font-style:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-moz-font-feature-settings:liga on;color:#373737;font-size:18px;line-height:1.4}
+    body{box-sizing:border-box;padding-top:60px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;letter-spacing:0;font-style:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-moz-font-feature-settings:liga on;color:#373737;font-size:18px;line-height:1.4}
     header{text-align:center}
-    .content,header{margin:auto;max-width:66rem;padding-top:1.5em}
+    .content{margin-left:auto;margin-right:auto;max-width:66rem;padding-top:1.5em}
+    main {margin-bottom: 16rem;}
     h1{font-size:16px}
     h2{font-size:14px}
     p{margin:25px 0}
     a{color:#4F8EF7;text-decoration:none;opacity:.7;transition-timing-function:ease-in-out;transition-duration:.1s;transition-property:color;transition-property:opacity}
     a:active,a:focus,a:hover{text-decoration:underline;opacity:1}
-    .download{max-width:200px;width:100%;margin:60px auto 10px}
-    .download a{display:block;padding:12px 0;border:2px solid #4F8EF7;border-radius:2px;background-color:#fff;text-decoration:none;font-weight:700;font-size:22px}
+    .download{max-width:200px;width:100%;margin:40px auto 10px}
+    .download a{display:block;padding:12px 0;border:2px solid #4F8EF7;border-radius:4px;background-color:#fff;text-decoration:none;font-weight:700;font-size:22px}
     .download a:hover{background:#4F8EF7;color:#fff}
     .version{margin:2px auto;color:#ccc;font-size:12px}
-    .icon-box{float:left;width:22rem;font-size:32px;padding-bottom:.25em}
+    .icon-box{float:left;width:22rem;font-size:32px;padding-bottom:.25rem;cursor:pointer;}
+    .icon-box#active {color: #4F8EF7;}
     .icon-name{font-size:.5em;margin-left:1em}
     .clearfix:after,.clearfix:before{content:" ";display:table}
     .clearfix:after{clear:both}
+    footer{position:fixed;bottom:0;left:0;right:0;background-color:#fff;}
+    footer .content{border-top: 1px solid #4e8ef7;margin:auto;max-width:66rem;padding-top:0;}
+    footer input, footer textarea {display:block;box-sizing:border-box;padding:.5rem;width:100%;min-height:30px;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);color:#333;vertical-align:middle;font-size:14px;-webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-bottom:1rem;resize:none;}
+    footer input:focus,footer textarea:focus{outline:0;border-color:#4F8EF7;}
+    footer svg{vertical-align:bottom;padding-left:.5rem;fill:#999;}
   </style>
 
   <style type="text/css">
@@ -63,10 +70,32 @@
   {{/shapes}}
   </svg>
 
-  <header>
+  <footer style="display:none;">
+    <div class="content">
+      <h1>
+        <strong>Your icon is ready!</strong>
+        <a href="">
+          <svg class="ion-help-circled" height="24" width="24">
+            <use xlink:href="#ion-help-circled"></use>
+          </svg>
+        </a>
+
+        <a href="#" id="close-footer" style="float:right;">
+          <svg class="ion-close-round" height="24" width="24">
+            <use xlink:href="#ion-close-round"></use>
+          </svg>
+        </a>
+      </h1>
+
+      <input type="text" value="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" onclick="this.select();" readonly="">
+      <textarea onclick="this.select();" readonly="" rows="3"></textarea>
+    </div>
+  </footer>
+
+  <header class="content">
     <h1><strong>Ionicons sprite</strong></h1>
-    <h1>SVG sprite icon set based on Ionicons icons</h1>
-    <h2>100% free and open source. MIT Licensed.</h2>
+    <h1>SVG sprite icon set based on <a href="">Ionicons</a> icons</h1>
+    <h1><a href="">What, why and how?</a></h1>
     <p>
       <span class="github-star">
         <iframe src="http://ghbtns.com/github-btn.html?user=rastasheep&amp;repo=ionicons-sprite&amp;type=watch&amp;count=true"
@@ -77,11 +106,14 @@
       <a href="https://github.com/rastasheep/ionicons-sprite">Download</a>
     </p>
     <p class="version">
-      Ionicons Version 2.0.1 - <a href="https://github.com/driftyco/ionicons">GitHub</a>
+      100% free and open source. MIT Licensed<br>
+      Ionicons Version 2.0.1
+      - <a href="https://github.com/rastasheep/ionicons-sprite">GitHub</a>
+      - <a href="https://github.com/driftyco/ionicons">Usage</a>
     </p>
   </header>
 
-  <div class="clearfix content">
+  <main class="clearfix content">
 
 {{#shapes}}    <div class="icon-box">
       <svg class="ion {{#selector.dimensions}}{{#last}}{{#classname}}{{raw}}{{/classname}}{{/last}}{{/selector.dimensions}}">
@@ -91,7 +123,70 @@
   </div>
 {{/shapes}}
 
-  </div>
+  </main>
+  <script type="text/javascript">
+    function DemoPage(document) {
+      var icons = document.querySelectorAll(".icon-box");
+      function iconName(element){
+        return element.querySelectorAll('svg')[0].classList[1]
+      }
+      function iconSymbol(iconName) {
+        return document.querySelector('svg').getElementById(iconName).outerHTML;
+      }
+      function iconSvg(iconName){
+        return "<svg class=\"ion " + iconName + "\"> \n  <use xlink:href=\"#" + iconName + "\"></use>\n</svg>";
+      }
+      function setIconAsActive(element){
+        element.setAttribute('id', 'active');
+      }
+      function unsetActiveIcon(elements){
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].id = '';
+        }
+      }
+      function hideFooter () {
+        return document.querySelector('footer').style.display = "none";
+      }
+      function showFooter (iconSvg, iconSymbol) {
+        var footer =  document.querySelector('footer');
+        footer.querySelector('input').value = iconSymbol
+          footer.querySelector('textarea').value = iconSvg;
+        return footer.style.display = "block";
+      }
+      function bindDocumentClick(document) {
+        document.addEventListener("click", function() {
+          unsetActiveIcon(icons);
+          hideFooter();
+        });
+      }
+      function bindFooterClick(document) {
+        document.querySelector("footer .content").addEventListener("click", function(event) {
+          event.stopPropagation();
+        });
+        document.querySelector("footer #close-footer").addEventListener("click", function(event) {
+          unsetActiveIcon(icons);
+          hideFooter();
+        });
+      }
+      function bindIconClick(document, icons) {
+        for (var i = 0; i < icons.length; i++) {
+          icons[i].addEventListener("click", function(event) {
+            event.stopPropagation();
+            var element = this;
+            var name = iconName(element)
+              hideFooter();
+            showFooter(iconSvg(name), iconSymbol(name));
+            unsetActiveIcon(icons);
+            setIconAsActive(element);
+          });
+        }
+      }
+      bindDocumentClick(document);
+      bindFooterClick(document);
+      bindIconClick(document, icons);
+    }
 
+    new DemoPage(document);
+  </script>
 </body>
 </html>
