@@ -1,7 +1,9 @@
 # Ionicons sprite
 ### SVG sprite icon set based on [Ionicons icons](http://ionicons.com).
 
-[Check the demo](https://rastasheep.github.io/ionicons-sprite).
+- [Check the demo](https://rastasheep.github.io/ionicons-sprite)
+- [Download sprite](https://github.com/rastasheep/ionicons-sprite/releases)
+- [How to use?](#-how)
 
 ## What, why, how?
 
